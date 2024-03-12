@@ -75,7 +75,7 @@ const routes: RouteRecordRaw[] = [
                     title: '权限管理',
                     permiss: '13',
                 },
-                component: () => import(/* webpackChunkName: "permission" */ '../views/permission.vue'),
+                component: () => import(/* webpackChunkName: "permission" */ '../views/user/UserList.vue'),
             },
             {
                 path: '/upload',
