@@ -119,9 +119,7 @@ const hide = ref(false);
 
 const dialogVisible = ref(false);
 
-const add_user = () => {
-  router.push({name: "UserNew"});
-}
+const add_user = () => router.push({name: "UserNew"});
 
 const show_user = async (row: any) => {
   try {
@@ -169,21 +167,11 @@ const get_users = async () => {
 };
 get_users();
 
-const handleSizeChange = () => {
-  get_users();
-};
+const handleSizeChange = () => get_users();
+const handleCurrentChange = () => get_users();
 
-const handleCurrentChange = () => {
-  get_users();
-};
-
-const openDialogShow = () => {
-  dialogVisible.value = true;
-};
-
-const closeDialogShow = () => {
-  dialogVisible.value = false;
-};
+const openDialogShow = () => dialogVisible.value = true;
+const closeDialogShow = () => dialogVisible.value = false;
 
 const editVisible = ref(false);
 
@@ -216,9 +204,7 @@ const saveEdit = () => {
   }
 };
 
-const cancelEdit = () => {
-  editVisible.value = false;
-};
+const cancelEdit = () => editVisible.value = false;
 </script>
 
 <style scoped>
