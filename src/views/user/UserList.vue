@@ -103,29 +103,25 @@ import {delUser, getUserList, showUser, updateUser} from "../../services/user.se
 import {reactive, ref} from "vue";
 import router from "../../router";
 import {ElMessage, ElMessageBox} from "element-plus";
+import {User, UserData} from "./data";
 
 
 const title = ref("用户列表");
-
-interface User {
-  id: number;
-  UserName: string;
-}
-
 const userList = ref<User[]>([]);
-
 const user = ref<User>({
   id: 0,
   UserName: ""
 });
-
-
 const currentPage = ref(1);
 const pageSize = ref(10);
 const total = ref(0);
 const hide = ref(false);
 
 const dialogVisible = ref(false);
+
+const add_user = () => {
+  router.push({name: "UserNew"});
+}
 
 const show_user = async (row: any) => {
   try {
@@ -137,14 +133,6 @@ const show_user = async (row: any) => {
     console.error(e);
   }
 };
-
-function edit_user(row: any) {
-  router.push({name: "UserEdit", params: {id: row.id}});
-}
-
-function add_user() {
-  router.push({name: "UserNew"});
-}
 
 const delete_user = async (index: number, row: any) => {
   //TODO: 添加loading状态，避免用户频繁点击删除按钮
@@ -164,12 +152,10 @@ const delete_user = async (index: number, row: any) => {
       await delUser(row.id).then(() => {
         userList.value.splice(index, 1);
       });
-
     }
   } catch (e) {
     ElMessage.error("删除用户失败");
   }
-
 };
 
 const get_users = async () => {
@@ -181,11 +167,12 @@ const get_users = async () => {
     console.error("获取用户列表失败");
   }
 };
-
 get_users();
+
 const handleSizeChange = () => {
   get_users();
 };
+
 const handleCurrentChange = () => {
   get_users();
 };
@@ -193,13 +180,14 @@ const handleCurrentChange = () => {
 const openDialogShow = () => {
   dialogVisible.value = true;
 };
+
 const closeDialogShow = () => {
   dialogVisible.value = false;
 };
 
-//TODO: 使用interface来定义表单数据结构 ?, handleEdit传入表单变量
 const editVisible = ref(false);
-let form = reactive({
+
+const form = reactive<UserData>({
   id: "",
   UserName: ""
 });
@@ -209,9 +197,6 @@ const handleEdit = (index: number, row: any) => {
   form.id = id;
   form.UserName = UserName;
   editVisible.value = true;
-};
-const closeHandleEdit = () => {
-  editVisible.value = false;
 };
 
 //TODO: 添加表单验证逻辑，验证用户输入的信息有效
@@ -234,7 +219,6 @@ const saveEdit = () => {
 const cancelEdit = () => {
   editVisible.value = false;
 };
-
 </script>
 
 <style scoped>
