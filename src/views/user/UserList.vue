@@ -1,5 +1,7 @@
 <template>
   <div>
+
+  <div>
     {{ title }}
   </div>
 
@@ -96,11 +98,12 @@
     </template>
   </el-dialog>
 
+  </div>
 </template>
 
 <script lang="ts" setup>
-import {delUser, getUserList, showUser, updateUser} from "../../services/user.service";
-import {reactive, ref} from "vue";
+import {delUser, getUserList, showUser, updateUser} from "./service";
+import {onMounted, reactive, ref} from "vue";
 import router from "../../router";
 import {ElMessage, ElMessageBox} from "element-plus";
 import {User, UserData} from "./data";
