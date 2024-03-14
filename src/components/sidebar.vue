@@ -108,7 +108,7 @@ const items = [
         permiss: "6"
       },
       {
-        index: "4",
+        index: "/db",
         title: "数据库",
         permiss: "7",
         subs: [
@@ -146,7 +146,6 @@ const items = [
     subs: [
       {
         index: "/permission",
-
         title: "用户列表",
         permiss: "13"
       },
