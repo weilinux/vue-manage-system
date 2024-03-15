@@ -18,7 +18,7 @@ const routes: RouteRecordRaw[] = [
                 path: '/dashboard',
                 name: 'dashboard',
                 meta: {
-                    title: '系统首页',
+                    title: '系统概览',
                     permiss: '1',
                 },
                 component: () => import(/* webpackChunkName: "dashboard" */ '../views/dashboard.vue'),
@@ -27,7 +27,7 @@ const routes: RouteRecordRaw[] = [
                 path: '/table',
                 name: 'basetable',
                 meta: {
-                    title: '表格',
+                    title: '主机列表',
                     permiss: '2',
                 },
                 component: () => import(/* webpackChunkName: "table" */ '../views/host/HostList.vue'),
@@ -36,7 +36,7 @@ const routes: RouteRecordRaw[] = [
                 path: '/charts',
                 name: 'basecharts',
                 meta: {
-                    title: '图表',
+                    title: '计划任务',
                     permiss: '11',
                 },
                 component: () => import(/* webpackChunkName: "charts" */ '../views/charts.vue'),
@@ -45,7 +45,7 @@ const routes: RouteRecordRaw[] = [
                 path: '/form',
                 name: 'baseform',
                 meta: {
-                    title: '表单',
+                    title: '消息队列',
                     permiss: '5',
                 },
                 component: () => import(/* webpackChunkName: "form" */ '../views/form.vue'),
@@ -54,7 +54,7 @@ const routes: RouteRecordRaw[] = [
                 path: '/tabs',
                 name: 'tabs',
                 meta: {
-                    title: 'tab标签',
+                    title: '容器管理',
                     permiss: '3',
                 },
                 component: () => import(/* webpackChunkName: "tabs" */ '../views/tabs.vue'),
@@ -63,7 +63,7 @@ const routes: RouteRecordRaw[] = [
                 path: '/donate',
                 name: 'donate',
                 meta: {
-                    title: '鼓励作者',
+                    title: '系统设置',
                     permiss: '14',
                 },
                 component: () => import(/* webpackChunkName: "donate" */ '../views/donate.vue'),
@@ -81,7 +81,7 @@ const routes: RouteRecordRaw[] = [
                 path: '/upload',
                 name: 'upload',
                 meta: {
-                    title: '上传插件',
+                    title: '缓存系统',
                     permiss: '6',
                 },
                 component: () => import(/* webpackChunkName: "upload" */ '../views/upload.vue'),
@@ -90,7 +90,7 @@ const routes: RouteRecordRaw[] = [
                 path: '/icon',
                 name: 'icon',
                 meta: {
-                    title: '自定义图标',
+                    title: '应用管理',
                     permiss: '10',
                 },
                 component: () => import(/* webpackChunkName: "icon" */ '../views/icon.vue'),
@@ -107,7 +107,7 @@ const routes: RouteRecordRaw[] = [
                 path: '/editor',
                 name: 'editor',
                 meta: {
-                    title: '富文本编辑器',
+                    title: '数据库管理',
                     permiss: '8',
                 },
                 component: () => import(/* webpackChunkName: "editor" */ '../views/editor.vue'),
@@ -116,7 +116,7 @@ const routes: RouteRecordRaw[] = [
                 path: '/markdown',
                 name: 'markdown',
                 meta: {
-                    title: 'markdown编辑器',
+                    title: 'NoSQL管理',
                     permiss: '9',
                 },
                 component: () => import(/* webpackChunkName: "markdown" */ '../views/markdown.vue'),
@@ -125,7 +125,7 @@ const routes: RouteRecordRaw[] = [
                 path: '/export',
                 name: 'export',
                 meta: {
-                    title: '导出Excel',
+                    title: '告警管理',
                     permiss: '2',
                 },
                 component: () => import(/* webpackChunkName: "export" */ '../views/export.vue'),
@@ -134,7 +134,7 @@ const routes: RouteRecordRaw[] = [
                 path: '/import',
                 name: 'import',
                 meta: {
-                    title: '导入Excel',
+                    title: '主机监控',
                     permiss: '2',
                 },
                 component: () => import(/* webpackChunkName: "import" */ '../views/import.vue'),
