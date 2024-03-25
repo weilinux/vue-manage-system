@@ -2,6 +2,7 @@
  * 主机管理模块
  */
 import request from "../../router/request";
+import { HostData } from "./data";
 
 const getUserHosts = (page: number, limit: number) => {
     return request({
@@ -28,7 +29,7 @@ const getHost = (id: string) => {
     });
 };
 
-const addHost = (host: any) => {
+const addHost = (host: HostData) => {
     return request({
         url: "/api/hosts",
         method: "post",
@@ -42,9 +43,10 @@ const addHost = (host: any) => {
 };
 
 
-const updateHost = (id: string, host: any) => {
+const updateHost = (host: HostData) => {
+    let hostId = host.id.toString()
     return request({
-        url: "/api/hosts/" + id,
+        url: "/api/hosts/" + hostId,
         method: "put",
         headers: {"content-type": "application/x-www-form-urlencoded"},
         data: {
@@ -55,7 +57,7 @@ const updateHost = (id: string, host: any) => {
     });
 };
 
-const searchHosts = (host: any, page: number, limit: number) => {
+const searchHosts = (host: string, page: number, limit: number) => {
     return request({
         url: "/api/users/searchhost?",
         method: "get",

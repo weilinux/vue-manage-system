@@ -1,14 +1,14 @@
 export { Host, HostData }
 
 interface Host {
-    ID: number;
+    id: number;
     HostName: string;
     HostIP: string;
     HostPort: number;
 }
 
 interface HostData {
-    ID: number;
+    id: number;
     HostName: string;
     HostIP: string;
     HostPort: number;
